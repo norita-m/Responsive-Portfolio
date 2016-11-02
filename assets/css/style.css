@@ -265,6 +265,7 @@ textarea {
 textarea {
 	height: 200px;
 }
+
 input[type=submit] {
 	background: #4aaaa5;
 	border: 0 none;
@@ -275,6 +276,98 @@ input[type=submit] {
 }
 
 
+/* Media Query */ 
+
+
+/* Rules for screen widths at 980px -- struggling with 980px */
+@media screen and (max-width: 980px) {
+
+	.masthead {
+		width:100%;
+	}
+	.container {
+		width: 50%
+		margin: 0 20px 0 20px;
+		position: center;
+	}
+
+	.main-section {
+		max-width: 50%
+		margin-left: 100px;
+		position: center;
+	}
+
+
+	.sidebar {
+		float: right;
+	}
+
+}
+
+/* Rules for screen widths at 768px */
+@media screen and (max-width: 768px) {
+
+
+	.masthead {
+		width:100%;
+	}
+	.container {
+		position: center;
+		width: 85%;
+	}
+	.sidebar {
+		float: left;
+		max-width: 100%;
+	}
+
+
+}
+
+
+/* Rules for screen widths at 640px */
+@media screen and (max-width: 640px) {
+
+	.masthead {
+		width:85%;
+	}
+
+	#logo {
+		width: 100%;
+	}
+
+	nav {
+		width: 100%;
+		position: center;
+		text-align: center;
+		padding-bottom: 20px;
+
+	}
+	.container {
+		width: 100%;
+	}
+
+	.main-section {
+		margin-top: 60px;
+		width: 85%;
+		float: none;
+		position: center;
+		margin-left: 50px;
+	}
+
+		.work {
+		width: 100%;
+	}
+
+	.sidebar {
+		position: center;
+		max-width: 85%;
+		margin-left: 50px;
+	}
+
+
+
+
+}
 
 
 
