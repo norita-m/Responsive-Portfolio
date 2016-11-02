@@ -1,113 +1,282 @@
 body { 
 	background-image: url(../images/vaio_hard_edge.png);
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	}
-
-header { 
-	background: white;
-	padding: 20px;
-	margin-bottom: 20px;
-	margin-top: 0px;
-	color: #333;
-	float: left;
-	width: 100%;
-	font-family: 'Georgia', Times, Times New Roman, serif;
-	border-bottom: 2px solid #cccccc;
-	}
-
-
-.nav { 
-	display: inline;
-	float: right;
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 14px;
-	color: #777777;
-	}
-
-h1 { 
-	background-color: #4aaaa5;
-	border-color: #cccccc;
-	width: 15%;
-	text-align: center;
-	padding: 20px;
-	color: white;
-	font-size: 24px;
-	margin-left: 360px;
-	margin-top: 0px;
- 	}
-
-h2 { 
-	color: #4aaaa5;
 	font-size: 18px;
-	font-family: 'Georgia', Times, Times New Roman, serif;
-
+	line-height: 34px;
+	color: #777;
 	}
 
-hr { color: #cccccc; 
+* {
+	box-sizing: border-box;
 	}
 
-.main { 
-	background: #ffffff;
-	width: 650px;
-	height: 50%;
-	border: 1px solid #dddddd;
-	padding: 20px;
-	overflow: auto;
-	clear: both;
-	height: 50%;
-	}
 
-#me {
-	float: left;
-	margin: 10px 10px 10px 0;
-	}
+/* General info */
 
-.icon {
-	height: 44px;
-	width: 44px;
-	padding-top: 10px;
-	}
-
+/* class container has my name and the nav bar */
 .container {
-	margin: 0 auto;
-	width: 690px;
-	}
-
-.main-body {
-	width: 690px;
-	position: center;
-	height: 800px;
-	}
-
-p {
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 14px;
-	color: #777777;
-	}
-
-
-.connect { 
-	border: 1px solid #777777;
-	float: right;
-	background-color: #ffffff;
-	padding: 20px;
-	width: 270px;
-	}
-
-
-
-footer { 
-	border-top: 8px;
-	border-style: solid;
-	border-color: #4aaaa5;
-	background: #666666;
-	font-size: 10px;
-	color: white;
-	text-align: center;
-	padding: 30px;
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 	width: 100%;
-    position: absolute; 
-    left: 0 ; right: 0; bottom: 0; 
-	 }
+	max-width: 960px;
+	margin: 0 auto;
+	clear: both;
+	}
+
+/* making all header and paragraph text 20px space from bottom */ 
+h1, 
+h2, 
+h3, 
+p {
+	margin-bottom: 20px;
+	}
+
+/* not sure what this does */ 
+p:last-child {
+	margin-bottom: 0;
+	}
+
+/* sets all the header fonts */ 
+h1, h2, h3 {
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	font-weight: 700; 	/* does using bold also work? */
+	color: #4aaaa5;
+	}
+
+/* specifying only the H1 font */ 
+h1 {
+	font-size: 30px;
+	line-height: 49px;
+	border-bottom: 3px solid #ddd;  /* this adds the dividing line between header and paragraph */ 
+	padding-bottom: 20px;
+	}
+
+/* specifying only the H2 and H3 fonts */ 
+h2,
+h3 {
+	font-size: 22px;
+	}
+
+
+
+/* HEADER -- contains masthead and logo */ 
+
+#masthead {
+	background: white;
+	border-bottom: 2px solid #cccccc;
+	margin: 0 0 30px;	/* what does this do? */
+	z-index: 99; 		/* The z-index property specifies the stack order of an element */
+	overflow: auto;		/* what does this do? */
+	position: fixed;	/* what does this do? */
+	width: 100%;
+	color: #fff;
+	}
+
+
+
+#logo {
+	color: white;
+	background-color: #4aaaa5;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	width: 250px; 	/* since I added width, should I take off padding? A: yes, removed padding*/
+	height: 90px;
+	float: left;
+	line-height: 90px;
+	text-decoration: none;
+    				/* need to figure out how to move to bottom of masthead A: adjusted the height*/ 
+	}
+
+
+/* Navigation links */ 
+nav {float: right;
+	margin-top: 25px; /* pushes the navigation links down */
+	}
+
+/* Navigation links -- totally did not think of this, adjusts the actual fonts */ 
+nav a { 
+	color: #999;
+	text-decoration: none; /* prevents any underlines and other diff styles to Nav bar*/
+	margin-left: 15px; /* sets some space between the words about, port, and contact */
+	display: inline-block;
+	border-left: 1px solid #efefef; /* sets the | between the nav links (but right now it also shows on the left of About - A: see first child below) */ 
+	padding-left: 15px;
+	line-height: 18px;
+	}
+
+/* The :first-child selector is used to select the specified selector, only if it is the first child of its parent. */
+/* this removes the line from the left of About in this case*/ 
+nav a:first-child {
+	border-left: 0 none;
+	}
+
+
+/* Footer -- why is footer up here in CSS and not at the very bottom? */
+
+footer {
+	padding: 30px 0; 	/* i already had the 30, but what is the 0 for? */ 
+	background: #666666;
+	color: #fff;		/* why are there two colors? */ 
+	border-top: solid 5px #4aaaa5;
+	font-size: 12px;
+	color: #ccc;
+	text-align: center;
+	clear: both; /* this allows the footer to not be disturbed by the main contents */ 
+	}
+
+
+/* Connect ID div has Connect With Me and Social Logos */
+/* this did not get used in solution. why is connect id not used? #connect {
+	background-color: #ffffff;
+	border: solid 1px #dddddd;
+	width: 270px;
+	padding: 20px;
+	float: right;
+	} */
+
+
+/*sidebar*/
+.sidebar {
+	background: #fff;
+	border: solid 1px #dddddd;
+	max-width: 270px; 	/* why max width instead of just width?*/
+	width: 100%; /* why? */
+	float: right;
+	padding: 30px;
+	margin-bottom: 20px;
+	}
+
+
+/*sidebar*/
+/*sidebar heading, and portfolio pic headings*/
+h3,
+.sidebar h2 {
+	border-bottom: 2px solid #eee; /*this adds the line underneath Connect with Me*/
+	padding-bottom: 20px; /* why both margin and padding? I know one is to separate the gray line from Connect w/me*/
+	margin-bottom: 15px;
+	line-height: 22px;
+	}
+
+
+/* Social = Logos */
+.social {
+	max-width: 62px; /* removing max caused logos to stretch*/
+    height: 62px;
+    margin-top: 8px;
+    margin-right: 5px;
+   }
+
+/* not sure what this did on the last logo*/
+.social:last-child {
+	margin-right: 0;
+	}
+
+
+
+/*Main*/ 
+
+/* this pushed the masthead up to the very top of the screen? */
+#main-container {
+	padding-top: 130px;
+	}
+
+.main-section {
+	background-color: #ffffff;
+	border: solid 1px #dddddd;
+	/* font-size: 16px;
+	line-height: 1.5; --- these apparently are not necessary here*/ 
+	padding: 30px; 
+	margin: 0 0 40px 0;  /* this gives some space at the bottom */
+	max-width: 650px;
+	width: 100%;
+	float: left;
+	}
+
+
+/*portfolio page*/
+/* work class is for the portfolio pics */
+.work {
+	width: 274px;
+	overflow: auto;	/* ? */
+	position: relative;
+	float: left;
+	margin: 20px 0 25px; /* setting marging for top, right, bottom only? */
+	}
+
+/* The :nth-child(n) selector matches every element that is the nth child, regardless of type, of its parent. */
+/* does this mean every other image in portfolio page has a right margin of 40px */ 
+.work:nth-child(even) {
+	margin-right: 40px;
+	}
+
+.work img {
+	width: 100%;
+	border: 0 none;
+	opacity: .8;
+	}
+
+/* the headings that lay over images in port page */ 
+.work h3 {
+	border-bottom: 0;
+	background: #4aaaa5;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	padding: 15px;
+	width: 100%;
+	bottom: 20px;
+	line-height: 30px;
+	margin-bottom: 0;
+	font-weight: 300;
+}
+
+/* this is my pic (runners) */
+.auth-image {
+	width: 200px;
+	height: auto;
+	margin-top: 10px;
+	float: left;
+	margin-right: 25px;
+}
+
+/*contact page*/
+
+#contact-form ul {
+	margin-bottom: 20px;
+}
+#contact-form li {
+	margin-bottom: 10px;
+}
+label,
+input[type=text],
+input[type=email],
+textarea {
+	display: block;
+	width: 100%;
+}
+input[type=text],
+input[type=email],
+textarea {
+	height: 35px;
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	font-size: 14px;
+}
+textarea {
+	height: 200px;
+}
+input[type=submit] {
+	background: #4aaaa5;
+	border: 0 none;
+	color: #fff;
+	font-size: 18px;
+	padding: 10px 30px;
+	cursor: pointer;
+}
+
+
+
+
+
+
 
